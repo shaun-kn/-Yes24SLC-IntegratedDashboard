@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=WasShuttleConveyorDataContext;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: 456123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jdbc:
+    template:
+      fetch-size: 100
+
+  devtools:
+    livereload:
+      enabled: false
+
+broker:
+  legacy:
+    uri: tcp://127.0.0.1:1883
+    prefix: 100
+    client-id: widis_gateway
+    max-reconnect-delay: 3
+    connection-timeout: 5
+  core:
+    uri: tcp://127.0.0.1:1883
+    client-id: core_gateway
+    max-reconnect-delay: 3
+    connection-timeout: 5
+
+logging:
+  level:
+    root: info
+    knr.yes24slc.mcsgaeway: off
